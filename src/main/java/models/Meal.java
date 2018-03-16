@@ -3,24 +3,18 @@ package models;
 import behaviours.IConsume;
 
 import java.util.ArrayList;
+import java.util.GregorianCalendar;
 
 public class Meal {
 
-    private String name;
+    private GregorianCalendar date;
     private ArrayList<IConsume> meals;
 
-    public Meal(String name) {
-        this.name = name;
+    public Meal(GregorianCalendar date) {
+
         this.meals = new ArrayList<IConsume>();
+        this.date = date;
 
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public ArrayList<IConsume> getMeals() {
@@ -30,5 +24,12 @@ public class Meal {
     public void setMeals(ArrayList<IConsume> meals) {
         this.meals = meals;
     }
-    
+
+    public GregorianCalendar getDate() {
+        return date;
+    }
+
+    public void setDate(GregorianCalendar date) {
+        this.date = date;
+    }
 }
