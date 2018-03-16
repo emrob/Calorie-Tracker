@@ -1,6 +1,6 @@
 package models;
 
-public enum FoodType {
+public enum FoodCategory {
     Carbohydrate,
     Pulse,
     Vegetable,

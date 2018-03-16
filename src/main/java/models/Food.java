@@ -3,13 +3,14 @@ package models;
 public class Food extends Consumable {
 
     private String mealType;
-    private FoodType foodType;
+    private FoodCategory foodCategory;
 
-    public Food(String name, String nutritionalRating, int calories, String mealType, FoodType foodType) {
+    public Food(String name, NutritionalRating nutritionalRating, int calories) {
         super(name, nutritionalRating, calories);
         this.mealType = mealType;
-        this.foodType = foodType;
+        this.foodCategory = foodCategory;
     }
+
 
     public String getMealType() {
         return mealType;
@@ -19,11 +20,11 @@ public class Food extends Consumable {
         this.mealType = mealType;
     }
 
-    public FoodType getFoodType() {
-        return foodType;
+    public FoodCategory getFoodCategory() {
+        return foodCategory;
     }
 
-    public void setFoodType(FoodType foodType) {
-        this.foodType = foodType;
+    public void setFoodCategory(FoodCategory foodCategory) {
+        this.foodCategory = foodCategory;
     }
 }
