@@ -12,7 +12,7 @@ public class TestFood {
 
      @Before
      public void before(){
-         food = new Food("Bread", NutritionalRating.Yellow, 100, "Side", FoodCategory.Carbohydrate);
+         food = new Food("Bread", NutritionalRating.Yellow, 100, 2, "Side", FoodCategory.Carbohydrate);
      }
 
      @Test
@@ -31,6 +31,11 @@ public class TestFood {
     }
 
     @Test
+    public void checkQuantyt() {
+         assertEquals(2, food.getQuantity());
+    }
+
+    @Test
     public void checkMealType() {
          assertEquals("Side", food.getMealType());
     }
@@ -38,5 +43,10 @@ public class TestFood {
     @Test
     public void checkFoodCat(){
          assertEquals(FoodCategory.Carbohydrate, food.getFoodCategory());
+    }
+
+    @Test
+    public void checkCaloriesConsumed(){
+         assertEquals(200, food.calculateCalories());
     }
 }

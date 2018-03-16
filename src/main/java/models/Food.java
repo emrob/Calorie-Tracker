@@ -5,8 +5,8 @@ public class Food extends Consumable {
     private String mealType;
     private FoodCategory foodCategory;
 
-    public Food(String name, NutritionalRating nutritionalRating, int calories, String mealType, FoodCategory foodCategory) {
-        super(name, nutritionalRating, calories);
+    public Food(String name, NutritionalRating nutritionalRating, int calories, int quantity, String mealType, FoodCategory foodCategory) {
+        super(name, nutritionalRating, calories, quantity);
         this.mealType = mealType;
         this.foodCategory = foodCategory;
     }

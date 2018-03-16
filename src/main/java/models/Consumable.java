@@ -1,15 +1,20 @@
 package models;
 
-public abstract class Consumable {
+import behaviours.IConsume;
+
+public abstract class Consumable implements IConsume {
     private int id;
     private String name;
     private NutritionalRating nutritionalRating;
     private int calories;
+    private int quantity;
 
-    public Consumable(String name, NutritionalRating nutritionalRating, int calories){
+    public Consumable(String name, NutritionalRating nutritionalRating, int calories, int quantity){
     this.name = name;
     this.nutritionalRating = nutritionalRating;
-    this.calories = calories; }
+    this.calories = calories;
+    this.quantity = quantity;
+    }
 
 //    public Consumable(){
 //
@@ -47,6 +52,18 @@ public abstract class Consumable {
 
     public void setCalories(int calories) {
         this.calories = calories;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public int calculateCalories(){
+        return this.quantity * this.calories;
     }
 }
 

@@ -16,6 +16,9 @@
         <mapping class="models.Meal"/>
         <mapping class="models.Consumable"/>
         <mapping class="models.Food"/>
+        <mapping class="models.Drink"/>
+        <mapping class="models.FoodCategory"/>
+        <mapping class="models.NutritionalRating"/>
 
     </session-factory>
 </hibernate-configuration>

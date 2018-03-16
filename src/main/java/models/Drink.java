@@ -2,8 +2,8 @@ package models;
 
 public class Drink extends Consumable{
     private int size;
-    public Drink(String name, NutritionalRating nutritionalRating, int calories, int size) {
-        super(name, nutritionalRating, calories);
+    public Drink(String name, NutritionalRating nutritionalRating, int calories, int quantity, int size) {
+        super(name, nutritionalRating, calories, quantity);
         this.size = size;
     }
 
