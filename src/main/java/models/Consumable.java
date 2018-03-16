@@ -2,6 +2,10 @@ package models;
 
 import behaviours.IConsume;
 
+import javax.persistence.*;
+
+@Entity
+@Inheritance(strategy = InheritanceType.JOINED)
 public abstract class Consumable implements IConsume {
     private int id;
     private String name;
@@ -16,12 +20,13 @@ public abstract class Consumable implements IConsume {
     this.quantity = quantity;
     }
 
-//    public Consumable(){
-//
-//        }
+    public Consumable(){
 
+        }
 
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name ="id")
     public int getId() {
         return id;
     }
@@ -30,6 +35,7 @@ public abstract class Consumable implements IConsume {
         this.id = id;
     }
 
+    @Column(name="name")
     public String getName() {
         return name;
     }
@@ -38,6 +44,7 @@ public abstract class Consumable implements IConsume {
         this.name = name;
     }
 
+    @Column(name="nutritional_rating")
     public NutritionalRating getNutritionalRating() {
         return nutritionalRating;
     }
@@ -46,6 +53,7 @@ public abstract class Consumable implements IConsume {
         this.nutritionalRating = nutritionalRating;
     }
 
+    @Column(name="calories")
     public int getCalories() {
         return calories;
     }
@@ -54,6 +62,7 @@ public abstract class Consumable implements IConsume {
         this.calories = calories;
     }
 
+    @Column(name="quantity")
     public int getQuantity() {
         return quantity;
     }

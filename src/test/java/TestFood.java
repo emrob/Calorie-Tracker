@@ -31,7 +31,7 @@ public class TestFood {
     }
 
     @Test
-    public void checkQuantyt() {
+    public void checkQuantity() {
          assertEquals(2, food.getQuantity());
     }
 

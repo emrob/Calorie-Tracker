@@ -1,5 +1,12 @@
 package models;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+
+@Entity
+@Inheritance(strategy = InheritanceType.JOINED)
 public class Food extends Consumable {
 
     private String mealType;
@@ -11,7 +18,10 @@ public class Food extends Consumable {
         this.foodCategory = foodCategory;
     }
 
+    public Food() {
+    }
 
+    @Column(name="meal_type")
     public String getMealType() {
         return mealType;
     }
@@ -20,6 +30,7 @@ public class Food extends Consumable {
         this.mealType = mealType;
     }
 
+    @Column(name="food_category")
     public FoodCategory getFoodCategory() {
         return foodCategory;
     }
