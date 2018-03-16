@@ -15,6 +15,7 @@
         <property name="show_sql">true</property>
         <mapping class="models.Meal"/>
         <mapping class="models.Consumable"/>
+        <mapping class="models.Food"/>
 
     </session-factory>
 </hibernate-configuration>

@@ -3,18 +3,18 @@ package models;
 public abstract class Consumable {
     private int id;
     private String name;
-    private String nutritionalRating;
+    private NutritionalRating nutritionalRating;
     private int calories;
 
-    public Consumable(String name, String nutritionalRating, int calories){
+    public Consumable(String name, NutritionalRating nutritionalRating, int calories){
     this.name = name;
     this.nutritionalRating = nutritionalRating;
     this.calories = calories; }
 
-//    public Consumerable(){
+//    public Consumable(){
 //
 //        }
-    
+
 
 
     public int getId() {
@@ -33,11 +33,11 @@ public abstract class Consumable {
         this.name = name;
     }
 
-    public String getNutritionalRating() {
+    public NutritionalRating getNutritionalRating() {
         return nutritionalRating;
     }
 
-    public void setNutritionalRating(String nutritionalRating) {
+    public void setNutritionalRating(NutritionalRating nutritionalRating) {
         this.nutritionalRating = nutritionalRating;
     }
 
@@ -49,4 +49,4 @@ public abstract class Consumable {
         this.calories = calories;
     }
 }
-}
+
