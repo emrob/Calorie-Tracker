@@ -1,6 +1,4 @@
-import models.Drink;
-import models.Food;
-import models.Meal;
+import models.*;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
@@ -16,6 +14,8 @@ public class TestMeal {
     @Before
     public void before(){
         meal = new Meal(new GregorianCalendar(2018,9,10));
+        drink = new Drink("Milkshake", NutritionalRating.Red,500, 1, 600);
+        food = new Food("Bread", NutritionalRating.Yellow, 100, 2, "Side", FoodCategory.Carbohydrate);
     }
 
     @Test
@@ -36,5 +36,11 @@ public class TestMeal {
         assertEquals(2, meal.getMealSize());
     }
 
+    @Test
+    public void testCaloriesOfMeal(){
+        meal.addFood(food);
+        meal.addDrink(drink);
+        assertEquals(700, meal.getCalorieTotal());
+    }
 
 }

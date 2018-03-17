@@ -46,4 +46,13 @@ public class Meal {
     public void addDrink(Drink drink){
         this.meals.add(drink);
     }
+
+    public int getCalorieTotal() {
+        int total = 0;
+        for (IConsume item : meals) {
+            total += item.calculateCalories();
+        }
+        return total;
+        }
 }
+

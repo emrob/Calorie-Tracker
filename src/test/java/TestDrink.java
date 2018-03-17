@@ -10,7 +10,7 @@ public class TestDrink {
     Drink drink;
 
     @Before public void before(){
-        drink = new Drink("Milkshake", NutritionalRating.Red,1,500, 600);
+        drink = new Drink("Milkshake", NutritionalRating.Red,500, 1, 600);
     }
 
     @Test
