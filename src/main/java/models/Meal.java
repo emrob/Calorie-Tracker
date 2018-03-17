@@ -9,6 +9,8 @@ public class Meal {
 
     private GregorianCalendar date;
     private ArrayList<IConsume> meals;
+    private Food food;
+    private Drink drink;
 
     public Meal(GregorianCalendar date) {
 
@@ -31,5 +33,17 @@ public class Meal {
 
     public void setDate(GregorianCalendar date) {
         this.date = date;
+    }
+
+    public int getMealSize(){
+       return this.meals.size();
+    }
+
+    public void addFood(Food food){
+        this.meals.add(food);
+    }
+
+    public void addDrink(Drink drink){
+        this.meals.add(drink);
     }
 }
