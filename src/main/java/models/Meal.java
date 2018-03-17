@@ -9,13 +9,15 @@ public class Meal {
 
     private GregorianCalendar date;
     private ArrayList<IConsume> meals;
+    private int dailyCalorieAllowance;
     private Food food;
     private Drink drink;
 
-    public Meal(GregorianCalendar date) {
-
-        this.meals = new ArrayList<IConsume>();
+    public Meal(GregorianCalendar date, int dailyCalorieAllowance) {
         this.date = date;
+        this.dailyCalorieAllowance = dailyCalorieAllowance;
+        this.meals = new ArrayList<IConsume>();
+
 
     }
 
@@ -25,6 +27,14 @@ public class Meal {
 
     public void setMeals(ArrayList<IConsume> meals) {
         this.meals = meals;
+    }
+
+    public int getDailyCalorieAllowance() {
+        return dailyCalorieAllowance;
+    }
+
+    public void setDailyCalorieAllowance(int dailyCalorieAllowance) {
+        this.dailyCalorieAllowance = dailyCalorieAllowance;
     }
 
     public GregorianCalendar getDate() {
@@ -54,5 +64,9 @@ public class Meal {
         }
         return total;
         }
+
+    public int caloriesLeftToUse() {
+        return dailyCalorieAllowance - getCalorieTotal();
+    }
 }
 
