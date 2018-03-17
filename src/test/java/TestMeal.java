@@ -13,14 +13,14 @@ public class TestMeal {
 
     @Before
     public void before(){
-        meal = new Meal(new GregorianCalendar(2018,9,10), 2000);
+        meal = new Meal(new GregorianCalendar(2018,3,12), 2000);
         drink = new Drink("Milkshake", NutritionalRating.Red,500, 1, 600);
         food = new Food("Bread", NutritionalRating.Yellow, 100, 2, "Side", FoodCategory.Carbohydrate);
     }
 
     @Test
     public void canGetDate(){
-        assertEquals(new GregorianCalendar(2018,9,10), meal.getDate());
+        assertEquals(new GregorianCalendar(2018,3,12), meal.getDate());
     }
 
     @Test

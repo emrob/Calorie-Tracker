@@ -68,5 +68,7 @@ public class Meal {
     public int caloriesLeftToUse() {
         return dailyCalorieAllowance - getCalorieTotal();
     }
+
+
 }
 
