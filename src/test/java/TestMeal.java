@@ -72,4 +72,5 @@ public class TestMeal {
         meal.addDrink(drink);
         assertEquals("Warning, you've consumed more than your daily calorie allowance", meal.calorieWarning());
     }
+
 }
