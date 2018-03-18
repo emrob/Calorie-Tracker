@@ -69,6 +69,15 @@ public class Meal {
         return dailyCalorieAllowance - getCalorieTotal();
     }
 
+    public String calorieWarning(){
+        getCalorieTotal();
+        if (getCalorieTotal() > 2000)
+        return "Warning, you've consumed more than your daily calorie allowance";
+        else
+            return "You have " + (getCalorieTotal()) + " calories left of your daily allowance";
+
+    }
+
 
 }
 

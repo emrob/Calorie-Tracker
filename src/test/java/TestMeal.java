@@ -61,4 +61,15 @@ public class TestMeal {
         assertEquals(1300, meal.caloriesLeftToUse());
 
     }
+
+    @Test
+    public void testCalorieWarning(){
+        Food food1 = new Food("Pasta", NutritionalRating.Yellow, 800, 1, "Main", FoodCategory.Carbohydrate);
+        Food food2 = new Food("Cheesecake", NutritionalRating.Red, 900, 1, "Dessert", FoodCategory.Dairy);
+        meal.addFood(food);
+        meal.addFood(food1);
+        meal.addFood(food2);
+        meal.addDrink(drink);
+        assertEquals("Warning, you've consumed more than your daily calorie allowance", meal.calorieWarning());
+    }
 }
