@@ -4,6 +4,7 @@ import behaviours.IConsume;
 
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
+import java.util.Set;
 
 public class Meal {
 
@@ -17,8 +18,6 @@ public class Meal {
         this.date = date;
         this.dailyCalorieAllowance = dailyCalorieAllowance;
         this.meals = new ArrayList<IConsume>();
-
-
     }
 
     public ArrayList<IConsume> getMeals() {

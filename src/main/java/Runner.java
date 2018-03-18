@@ -15,7 +15,6 @@ public class Runner {
         Drink drink1 = new Drink("Black Coffee", NutritionalRating.Green, 50, 3, 500);
         DBHelper.saveOrUpdate(drink1);
 
-
-
     }
 }
+
