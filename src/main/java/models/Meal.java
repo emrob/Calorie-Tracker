@@ -2,40 +2,42 @@ package models;
 
 import behaviours.IConsume;
 
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
+import java.util.HashSet;
 import java.util.Set;
 
+@Entity
+@Table(name = "meals")
 public class Meal {
-
+    private int id;
     private GregorianCalendar date;
-    private ArrayList<IConsume> meals;
-    private int dailyCalorieAllowance;
-    private Food food;
-    private Drink drink;
+    private Set<Food> foods;
+    private Set<Drink> drinks;
 
     public Meal(GregorianCalendar date, int dailyCalorieAllowance) {
         this.date = date;
-        this.dailyCalorieAllowance = dailyCalorieAllowance;
-        this.meals = new ArrayList<IConsume>();
+        this.foods = new HashSet<Food>();
     }
 
-    public ArrayList<IConsume> getMeals() {
-        return meals;
+    public Meal() {
     }
 
-    public void setMeals(ArrayList<IConsume> meals) {
-        this.meals = meals;
+
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    public int getId() {
+        return id;
     }
 
-    public int getDailyCalorieAllowance() {
-        return dailyCalorieAllowance;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public void setDailyCalorieAllowance(int dailyCalorieAllowance) {
-        this.dailyCalorieAllowance = dailyCalorieAllowance;
-    }
-
+    @Column(name= "date")
     public GregorianCalendar getDate() {
         return date;
     }
@@ -44,39 +46,26 @@ public class Meal {
         this.date = date;
     }
 
-    public int getMealSize(){
-       return this.meals.size();
+    @OneToMany(mappedBy = "meal", fetch = FetchType.EAGER)
+    public Set<Food> getFoods() {
+        return foods;
+    }
+
+    public void setFoods(Set<Food> foods) {
+        this.foods = foods;
+    }
+
+    @OneToMany(mappedBy = "meal", fetch = FetchType.EAGER)
+    public Set<Drink> getDrinks() {
+        return drinks;
+    }
+
+    public void setDrinks(Set<Drink> drinks) {
+        this.drinks = drinks;
     }
 
     public void addFood(Food food){
-        this.meals.add(food);
+        this.foods.add(food);
     }
-
-    public void addDrink(Drink drink){
-        this.meals.add(drink);
-    }
-
-    public int getCalorieTotal() {
-        int total = 0;
-        for (IConsume item : meals) {
-            total += item.calculateCalories();
-        }
-        return total;
-        }
-
-    public int caloriesLeftToUse() {
-        return dailyCalorieAllowance - getCalorieTotal();
-    }
-
-    public String calorieWarning(){
-        getCalorieTotal();
-        if (getCalorieTotal() > 2000)
-        return "Warning, you've consumed more than your daily calorie allowance";
-        else
-            return "You have " + (getCalorieTotal()) + " calories left of your daily allowance";
-
-    }
-
-
 }
 

@@ -1,6 +1,7 @@
 import db.DBHelper;
 import models.Food;
 import models.FoodCategory;
+import models.Meal;
 import models.NutritionalRating;
 import org.junit.After;
 import org.junit.Before;
@@ -13,10 +14,11 @@ import static org.junit.Assert.assertEquals;
 public class FoodDBTest {
 
     private Food food;
+    private Meal meal;
 
     @Before
     public void before() {
-        food = new Food("Bread", NutritionalRating.Yellow, 100, 2, "Side", FoodCategory.Carbohydrate);
+        food = new Food("Bread", NutritionalRating.Yellow, 100, 2, "Side", FoodCategory.Carbohydrate, meal);
     }
 
     @After

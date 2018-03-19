@@ -18,6 +18,7 @@
         <mapping class="models.Food"/>
         <mapping class="models.Drink"/>
         <mapping class="models.FoodCategory"/>
+        <mapping class="models.Meal"/>
         <mapping class="models.NutritionalRating"/>
 
     </session-factory>

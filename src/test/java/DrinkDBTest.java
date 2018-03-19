@@ -1,5 +1,6 @@
 import db.DBHelper;
 import models.Drink;
+import models.Meal;
 import models.NutritionalRating;
 import org.junit.After;
 import org.junit.Before;
@@ -11,10 +12,11 @@ import static org.junit.Assert.assertEquals;
 
 public class DrinkDBTest {
     private Drink drink;
+    private Meal meal;
 
     @Before
     public void before(){
-        drink = new Drink("Milkshake", NutritionalRating.Red,500, 1, 600);
+        drink = new Drink("Milkshake", NutritionalRating.Red,500, 1, 600, meal);
         DBHelper.saveOrUpdate(drink);
     }
 

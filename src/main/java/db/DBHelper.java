@@ -1,5 +1,7 @@
 package db;
 
+import models.Food;
+import models.Meal;
 import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -87,6 +89,12 @@ public class DBHelper {
         Criteria criteria = session.createCriteria(classType);
         results = getList(criteria);
         return results;
+    }
+
+    public static void addFoodToMeal(Food food, Meal meal) {
+        meal.addFood(food);
+        saveOrUpdate(food);
+        saveOrUpdate(meal);
     }
 
 }
